@@ -18,17 +18,17 @@ public class WC{
     public int getNoOfCharacters(String content) {
 	 	return content.split("").length;
 	}
-
     public String readFile(String file){
         String currentLine,text = "";
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             while ((currentLine = br.readLine()) != null) {
-                text += currentLine;
+                text += currentLine+ "\n";
             }
         } catch (IOException e) {
             System.out.println(e);
         }
+        text = text.substring(0 , text.length()-1);
         return text;
     }
 	public static void main(String args[]){
