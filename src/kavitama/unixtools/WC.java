@@ -4,12 +4,12 @@ import java.io.*;
 public class WC{
 
     String[] contentArray;
-    String newContent = "";
 
 	public int getNoOfLines(String content) {
 	 	return content.split("\n").length;
 	}
     public int getNoOfWords(String content) {
+        String newContent = "";
 		contentArray = content.split("\n");
 		for(int i =0 ;i<contentArray.length ; i++)
 			newContent = newContent + contentArray[i]+" ";
