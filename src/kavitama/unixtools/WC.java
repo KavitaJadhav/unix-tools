@@ -1,6 +1,6 @@
 
 package kavitama.unixtools;
-public class WC extends  ReadFile{
+public class WC extends ReadWriteFile {
 
     String[] contentArray;
 
@@ -23,6 +23,5 @@ public class WC extends  ReadFile{
 		System.out.println("lines "+wc.getNoOfLines(content));
 		System.out.println("words "+wc.getNoOfWords(content));
 		System.out.println("characters "+wc.getNoOfCharacters(content));
-
 	}
 }

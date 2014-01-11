@@ -1,9 +1,6 @@
 package kavitama.unixtools;
 
-/**
- * Created by kavitama on 1/7/14.
- */
-public class Head extends ReadFile{
+public class Head extends ReadWriteFile {
     public void printHead(String text ,int count ){
         String[] lines = text.split("\n");
         for (int i = 0; i < count && i < lines.length ; i++) {

@@ -1,6 +1,6 @@
 package kavitama.unixtools;
 
-public class Uniq extends ReadFile {
+public class Uniq extends ReadWriteFile {
     public String displayUniqLines(String content) {
         String[] lines = content.split("\n");
         String result = "";

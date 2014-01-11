@@ -1,8 +1,6 @@
 package kavitama.unixtools;
-/**
- * Created by kavitama on 1/9/14.
- */
-public class Tail extends ReadFile{
+
+public class Tail extends ReadWriteFile {
     public void printTail(String text ,int count ){
         String[] lines = text.split("\n");
         int i = 0;

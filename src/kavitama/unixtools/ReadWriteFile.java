@@ -1,13 +1,8 @@
 package kavitama.unixtools;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
-/**
- * Created by kavitama on 1/9/14.
- */
-public class ReadFile {
+public class ReadWriteFile {
     public String readFile(String file){
         String currentLine,text = "";
         try {
@@ -20,5 +15,16 @@ public class ReadFile {
         }
         text = text.substring(0 , text.length()-1);
         return text;
+    }
+    public void writeFile(String data , String fileNmae){
+        try{
+            File file = new File(fileNmae);
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(data);
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
