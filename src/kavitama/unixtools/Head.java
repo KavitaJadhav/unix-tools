@@ -1,11 +1,13 @@
 package kavitama.unixtools;
 
 public class Head extends ReadWriteFile {
-    public void printHead(String text ,int count ){
+    public String  printHead(String text ,int count ){
         String[] lines = text.split("\n");
+        String result ="";
         for (int i = 0; i < count && i < lines.length ; i++) {
-            System.out.println(lines[i]);
+            result += lines[i]+"\n";
         }
+        return result.substring(0 , result.length()-1);
     }
 
     public static void main(String args[]){
@@ -21,6 +23,6 @@ public class Head extends ReadWriteFile {
             content = h.readFile(args[0]);
             count = 10;
         }
-        h.printHead(content, count);
+        System.out.println(h.printHead(content, count));
     }
 }
