@@ -1,26 +1,24 @@
 package kavitama.unixtools;
 
 public class Tail extends ReadWriteFile {
-    public void printTail(String text ,int count ){
+    public String printTail(String text ,int count ){
         String[] lines = text.split("\n");
+        String result = "";
         int i = 0;
         if(lines.length > count) i = lines.length-count;
-            for (; i <lines.length ; i++)
-                System.out.println(lines[i]);
+        for (; i <lines.length ; i++)
+            result += lines[i]+"\n";
+        return result.substring(0 , result.length()-1);
     }
     public static void main(String args[]){
         Tail t = new Tail();
-        String content;
-        int count;
-        if (args.length>1){
-            content = t.readFile(args[1]);
-            count = Integer.parseInt(args[0]);
-            if(count < 0) count = count * (-1);
+        String content = "";
+        int count = 10;
+        for (int i = 0; i < args.length; i++) {
+            if(args[i].endsWith(".txt")) content = t.readFile(args[i]);
+            else count = Integer.parseInt(args[i]);
         }
-        else {
-            content = t.readFile(args[0]);
-            count = 10;
-        }
-        t.printTail(content, count);
+        if(count < 0) count = count * (-1);
+        System.out.println(t.printTail(content, count));
     }
 }
