@@ -1,7 +1,7 @@
 package kavitama.unixtools;
 
 public class Tail extends ReadWriteFile {
-    public String printTail(String text ,int count ){
+    public String getTail(String text ,int count ){
         String[] lines = text.split("\n");
         String result = "";
         int i = 0;
@@ -19,6 +19,6 @@ public class Tail extends ReadWriteFile {
             else count = Integer.parseInt(args[i]);
         }
         if(count < 0) count = count * (-1);
-        System.out.println(t.printTail(content, count));
+        System.out.println(t.getTail(content, count));
     }
 }

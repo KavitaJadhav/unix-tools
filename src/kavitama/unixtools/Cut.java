@@ -16,7 +16,7 @@ public class Cut extends ReadWriteFile {
     public static void main(String args[]) {
         Cut cut = new Cut();
         String content="" , separator = " ";
-        int column = 0 ;
+        int column = 1 ;
 
         for (int i = 0; i < args.length; i++) {
             if(args[i].startsWith("-d")) separator = args[i].substring(2);
