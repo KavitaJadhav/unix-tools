@@ -1,7 +1,7 @@
 package kavitama.unixtools;
 
 public class Uniq extends ReadWriteFile {
-    public String displayUniqLines(String content) {
+    public String getUniqLines(String content) {
         String[] lines = content.split("\n");
         String result = "";
         for (int i = 0; i < lines.length-1; i++) {
@@ -9,13 +9,12 @@ public class Uniq extends ReadWriteFile {
                 result += lines[i]+"\n";
             }
         }
-        result = result.substring(0, result.length() - 1);
-        return result;
+        return result += lines[lines.length-1];
     }
 
     public static void main(String args[]) {
         Uniq u = new Uniq();
         String content = u.readFile(args[0]);
-        System.out.println(u.displayUniqLines(content));
+        System.out.println(u.getUniqLines(content));
     }
 }

@@ -2,7 +2,7 @@ package kavitama.unixtools;
 
 public class RemoveSpaces extends ReadWriteFile {
 
-    private String removeBlankSpace(String content) {
+    public String removeBlankSpace(String content) {
         return content.replaceAll("[ ]+"," ");
     }
 
