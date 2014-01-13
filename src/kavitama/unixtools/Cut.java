@@ -24,6 +24,7 @@ public class Cut extends ReadWriteFile {
             else if(args[i].endsWith(".txt")) content = cut.readFile(args[i]);
             else content = args[i];
         }
+        System.out.println(content);
         System.out.println(cut.getSpecificFeild(column,content,separator));
     }
 }
