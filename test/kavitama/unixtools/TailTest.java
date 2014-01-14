@@ -10,7 +10,7 @@ public class TailTest extends Tail {
     public void testgetTail() throws Exception {
         Tail tail = new Tail();
         String content = "Hi\nhow r u \nwhats going on\nkkk jjj \nkkk jjjj";
-        String expected = "Hi\nhow r u \nwhats going on";
+        String expected = "whats going on\nkkk jjj \nkkk jjjj";
 
         String actual = tail.getTail(content,3);
 
