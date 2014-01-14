@@ -1,3 +1,5 @@
+package client;
+
 import kavitama.unixtools.Cut;
 
 public class CutClient {
