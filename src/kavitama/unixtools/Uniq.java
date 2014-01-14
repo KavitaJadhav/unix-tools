@@ -11,10 +11,4 @@ public class Uniq extends ReadWriteFile {
         }
         return result += lines[lines.length-1];
     }
-
-    public static void main(String args[]) {
-        Uniq u = new Uniq();
-        String content = u.readFile(args[0]);
-        System.out.println(u.getUniqLines(content));
-    }
 }
