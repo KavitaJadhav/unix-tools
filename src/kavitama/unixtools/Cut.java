@@ -12,6 +12,4 @@ public class Cut extends ReadWriteFile {
         }
         return field.substring(0 , field.length()-1);
     }
-
-
 }
