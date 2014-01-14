@@ -22,7 +22,7 @@ public class WCTest {
     @Test
     public void testGetNoOfWords() throws Exception {
         WC wc = new WC();
-        String content = "Hi\nhow r u \nwhats going on";
+        String content = "Hi\nhow r u\nwhats going on";
         int expected = 7;
 
         int actual = wc.getNoOfWords(content);
