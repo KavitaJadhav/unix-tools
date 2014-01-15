@@ -1,7 +1,7 @@
 package kavitama.unixtools;
 import java.util.Arrays;
 
-public class Sort {
+public class Sort extends  ReadWriteFile{
     public String joinArray(String[] content , String separator ,boolean reverse){
         String result = "";
         if(reverse) for(int i = content.length-1; i >=0 ; i--) result += content[i] + separator;
