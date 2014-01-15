@@ -1,6 +1,14 @@
 unix-tools
 ==========
 
+
+imp 
+-------------
+  Your classPath must contain UNIX_TOOLS variable
+  Example : if you put sh folder in D:something directoty
+  the classPath must contain *D:Something\sh*   as  * UNIX_TOOLs*
+  
+  
 WC
 --------------
 
