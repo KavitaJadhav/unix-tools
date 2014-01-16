@@ -14,4 +14,15 @@
         <mkdir dir="unix-tools/lib"></mkdir>
         <mkdir dir = "unix-tools/bin"></mkdir>
     </target>
+    <target name="createJar" depends="createDir">
+        <jar destfile = "unix-tools/lib/unix-tools.jar" basedir = "classes"></jar>
+    </target>
+    <target name="copyShells" depends="createJar">
+        <copy file = "sh/jk_Sort.sh" todir = "unix-tools/bin"></copy>
+        <copy file = "sh/jk_Tail.sh" todir = "unix-tools/bin"></copy>
+        <copy file = "sh/jk_Uniq.sh" todir = "unix-tools/bin"></copy>
+        <copy file = "sh/jk_WC.sh" todir = "unix-tools/bin"></copy>
+        <copy file = "sh/jk_Cut.sh" todir = "unix-tools/bin"></copy>
+        <copy file = "sh/jk_RemoveSpace.sh" todir = "unix-tools/bin"></copy>
+    </target>
 </project>
