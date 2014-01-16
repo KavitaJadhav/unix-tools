@@ -1,0 +1,9 @@
+<project name = "unix-tools">
+    <target name="clean">
+        <delete dir = "classes"></delete>
+        <delete dir = "unix-tools"></delete>
+        <delete dir = "unix-tools/lib"></delete>
+        <delete dir = "unix-tools/bin"></delete>
+    </target>
+
+</project>
