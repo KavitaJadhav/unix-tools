@@ -25,4 +25,7 @@
         <copy file = "sh/jk_Cut.sh" todir = "unix-tools/bin"></copy>
         <copy file = "sh/jk_RemoveSpace.sh" todir = "unix-tools/bin"></copy>
     </target>
+    <target name="copyReadMe" depends="copyShells">
+        <copy file = "README.md" todir = "unix-tools"></copy>
+    </target>
 </project>
