@@ -25,5 +25,14 @@ public class CutTest extends Cut {
 
         assertEquals(expected , actual);
     }
+    @Test
+    public void testGetSpecificFeildwithseparator() throws Exception {
+        Cut cut = new Cut();
+        String content = "Hi:\nhow :r u \nwhats :going on\nkkk :jjj \nkkk jjjj";
+        String expected = "\nr u \ngoing on\njjj \n";
 
+        String actual = cut.getSpecificFeild(2,content,":");
+
+        assertEquals(expected , actual);
+    }
 }
