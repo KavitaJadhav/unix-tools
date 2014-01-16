@@ -28,4 +28,7 @@
     <target name="copyReadMe" depends="copyShells">
         <copy file = "README.md" todir = "unix-tools"></copy>
     </target>
+    <target name="createZip" depends="copyReadMe">
+        <zip zipFile = "unix-tools.zip" basedir = "unix-tools"></zip>
+    </target>
 </project>
