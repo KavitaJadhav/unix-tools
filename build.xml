@@ -5,5 +5,8 @@
         <delete dir = "unix-tools/lib"></delete>
         <delete dir = "unix-tools/bin"></delete>
     </target>
-
+    <target name = "compile">
+        <mkdir dir = "classes"></mkdir>
+        <javac srcdir = "src" destdir = "classes"></javac>
+    </target>
 </project>
