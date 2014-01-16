@@ -2,7 +2,6 @@ package client;
 
 import kavitama.unixtools.Sort;
 
-
 public class SortClient {
     public static void main(String[] args) {
         boolean reverse = false;

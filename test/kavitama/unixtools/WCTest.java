@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by kavitama on 1/8/14.
- */
 public class WCTest {
     @Test
     public void testGetNoOfLines() throws Exception {
