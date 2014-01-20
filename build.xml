@@ -1,30 +1,49 @@
 <project name = "unix-tools">
     <target name="clean">
-        <delete dir = "classes"></delete>
-        <delete dir = "unix-tools"></delete>
-        <delete dir = "unix-tools/lib"></delete>
         <delete dir = "unix-tools/bin"></delete>
+        <delete dir = "unix-tools/lib"></delete>
+        <delete dir = "unix-tools/built"></delete>
+        <delete dir = "unix-tools/build/classes"></delete>
+        <delete dir = "unix-tools/build/TestClasses"></delete>
     </target>
-    <target name = "compile">
-        <mkdir dir = "classes"></mkdir>
-        <javac srcdir = "src" destdir = "classes"></javac>
+    <target name = "createDir" >
+    <mkdir dir = "unix-tools"></mkdir>
+    <mkdir dir = "unix-tools/bin"></mkdir>
+    <mkdir dir="unix-tools/lib"></mkdir>
+    <mkdir dir = "unix-tools/External-Libraries"></mkdir>
     </target>
-    <target name = "createDir" depends = "compile">
-        <mkdir dir = "unix-tools"></mkdir>
-        <mkdir dir="unix-tools/lib"></mkdir>
-        <mkdir dir = "unix-tools/bin"></mkdir>
+    <target name = "compile" depends ="createDir">
+        <mkdir dir = "unix-tools/build/classes"></mkdir>
+        <javac srcdir = "src" destdir = "unix-tools/build/classes"></javac>
     </target>
-    <target name="createJar" depends="createDir">
-        <jar destfile = "unix-tools/lib/unix-tools.jar" basedir = "classes"></jar>
+    <target name = "compileTest" depends = "compile">
+        <copy file = "External Libraries\junit-4.10.jar" todir = "unix-tools/External-Libraries"></copy>
+        <mkdir dir = "unix-tools/build/TestClasses"></mkdir>
+        <javac srcdir = "test" destdir = "unix-tools/build/TestClasses" classpath = "unix-tools/build/classes"></javac>
     </target>
-    <target name="copyShells" depends="createJar">
-        <copy file = "sh/jk_Sort.sh" todir = "unix-tools/bin"></copy>
-        <copy file = "sh/jk_Head.sh" todir = "unix-tools/bin"></copy>
-        <copy file = "sh/jk_Tail.sh" todir = "unix-tools/bin"></copy>
-        <copy file = "sh/jk_Uniq.sh" todir = "unix-tools/bin"></copy>
-        <copy file = "sh/jk_WC.sh" todir = "unix-tools/bin"></copy>
-        <copy file = "sh/jk_Cut.sh" todir = "unix-tools/bin"></copy>
-        <copy file = "sh/jk_RemoveSpace.sh" todir = "unix-tools/bin"></copy>
+    <target name = "runTest" depends = "compileTest">
+        <java classname="org.junit.runner.JUnitCore"
+               classpath = "unix-tools/External-Libraries/junit-4.10.jar;unix-tools/build/classes;unix-tools/build/TestClasses">
+            <arg value="kavitama.unixtools.HeadTest"/>
+            <arg value="kavitama.unixtools.TailTest"/>
+            <arg value="kavitama.unixtools.UniqTest"/>
+            <arg value="kavitama.unixtools.WCTest"/>
+            <arg value="kavitama.unixtools.SortTest"/>
+            <arg value="kavitama.unixtools.CutTest"/>
+            <arg value="kavitama.unixtools.RemoveSpacesTest"/>
+        </java>
+    </target>
+    <target name="createJar" depends="runTest">
+        <jar destfile = "unix-tools/lib/unix-tools.jar" basedir = "unix-tools/build/classes"></jar>
+    </target>
+    <target name="deleteTestClasses" depends="createJar">
+        <delete dir = "unix-tools/build"></delete>
+        <delete dir = "unix-tools/External-Libraries"></delete>
+    </target>
+    <target name="copyShells" depends="deleteTestClasses">
+        <copy todir="unix-tools/bin">
+            <fileset dir="sh"/>
+        </copy>
     </target>
     <target name="copyReadMe" depends="copyShells">
         <copy file = "README.md" todir = "unix-tools"></copy>
