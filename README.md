@@ -23,7 +23,7 @@ You acn give one or more options
 `Example - jk_Wc.sh filename -[options]`
 
 
-for linecount , characterCount optiuons are
+for linecount , characterCount options are
 
 `Example - jk_Wc.sh filename -[lc]`
 Head
