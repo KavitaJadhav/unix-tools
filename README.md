@@ -17,7 +17,15 @@ This will display number of lines,words and characters in specified file
 
 `Example - jk_Wc.sh filename`
 
+you wan request just for wordCount or lineCount or CharactaerCount by giving options as arguments,
+You acn give one or more options
 
+`Example - jk_Wc.sh filename -[options]`
+
+
+for linecount , characterCount optiuons are
+
+`Example - jk_Wc.sh filename -[lc]`
 Head
 --------------
 
