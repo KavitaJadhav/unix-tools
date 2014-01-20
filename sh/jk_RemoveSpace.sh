@@ -1,0 +1,1 @@
+java -cp $UNIX_TOOLS/lib/unix-tools.jar client.removeSpaceClient $1 $2
