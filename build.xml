@@ -17,7 +17,7 @@
         <javac srcdir = "src" destdir = "unix-tools/build/classes"></javac>
     </target>
     <target name = "compileTest" depends = "compile">
-        <copy file = "External Libraries\junit-4.10.jar" todir = "unix-tools/External-Libraries"></copy>
+        <copy file = "External Libraries/junit-4.10.jar" todir = "unix-tools/External-Libraries"></copy>
         <mkdir dir = "unix-tools/build/TestClasses"></mkdir>
         <javac srcdir = "test" destdir = "unix-tools/build/TestClasses" classpath = "unix-tools/build/classes"></javac>
     </target>
